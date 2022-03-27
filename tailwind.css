@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 576px) {
+  #frmLogin {
+    @apply px-4;
+  }
+}
+
+[name='username']:focus + span,
+[name='pass']:focus + span {
+  width: calc(100% + 20px);
+}

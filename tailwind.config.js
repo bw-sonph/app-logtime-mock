@@ -1,5 +1,9 @@
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: {
+    enabled: true,
+    content: ['./dist/*.html'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -8,4 +12,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
