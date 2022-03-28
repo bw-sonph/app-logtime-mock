@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users List</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <div class="bg-gray-200 flex flex-col min-h-screen lg:flex-row">
+          <!-- HEADEER TOOLBARS -->
+          <header class="flex bg-[#2c5c23] z-[99] lg:flex-col">
+            <div
+              class="lg:w-full bg-[#57b846] justify-center p-5 hover:cursor-pointer hover:bg-[#68c059]"
+            >
+              <img
+                class="h-8 w-8 bg-transparent"
+                src="./images/icon-users.svg"
+                alt=""
+              />
+            </div>
+          </header>
+
+          <!-- MAIN -->
+          <div class="flex flex-col relative flex-1 px-[20px]">
+            <!-- LIST -->
+            <div
+              class="w-full py-[40px] px-[10px] max-w-[850px] -my-0 mx-auto lg:mt-[72px] bg-white shadow-md rounded-[20px]"
+            >
+              <!-- HEADER -->
+              <div class="flex mb-[65px]">
+                <div class="flex flex-col flex-1">
+                  <h1 class="text-xl font-bold">ユーザ一覧</h1>
+                  <span>2件中2件見つかりました</span>
+                </div>
+                <div class="flex flex-1 justify-end items-center">
+                  <div
+                    class="flex items-center hover:cursor-pointer mr-[25px] relative w-[140px]"
+                  >
+                    <div class="flex items-center w-full" id="filterStatus">
+                      <span class="select-none">ステータス </span>
+                      <span class="select-none ml-1" id="filterBy"></span>
+                      <img
+                        class="ml-[12px] w-[9px] h-[5px]"
+                        src="./images/icon-arrow-down.svg"
+                        alt=""
+                      />
+                    </div>
+                    <ul
+                      class="w-full absolute top-[25px] list-none bg-gray-200 shadow-sm border-[1px] rounded-br-lg rounded-bl-lg"
+                      style="display: none"
+                      id="filterStatusValue"
+                    >
+                      <li
+                        class="cursor-pointer py-1.5 px-5 hover:font-bold hover:bg-gray-100"
+                        value="2"
+                      >
+                        無効
+                      </li>
+                      <li
+                        class="cursor-pointer py-1.5 px-5 hover:font-bold hover:bg-gray-100"
+                        value="1"
+                      >
+                        有効
+                      </li>
+                      <li
+                        class="cursor-pointer py-1.5 px-5 hover:font-bold hover:bg-gray-100 hover:rounded-br-lg hover:rounded-bl-lg"
+                        value=""
+                      >
+                        クリア
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex button items-center py-[8px] px-[10px] rounded-[40px] bg-[#57b846]"
+                  >
+                    <div
+                      class="flex mr-[8px] rounded-[50%] p-[8px] items-center justify-center bg-white"
+                    >
+                      <img src="./images/icon-plus.svg" alt="" />
+                    </div>
+                    <span class="text-white">New User</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- users list -->
+              <div>
+                <a href="#" class="flex user">
+                  <div class="items-center gap-4 flex basis-[60%]">
+                    <span class="flex-1 uppercase">son.ph</span>
+                    <span class="flex-1">son.ph@briswell.com</span>
+                    <span class="flex-1 text-right">組織管理者</span>
+                  </div>
+                  <div class="items-center gap-4 flex basis-[40%]">
+                    <span class="flex-1 text-center">１分</span>
+                    <div class="flex status-button disabled">
+                      <span>無効</span>
+                    </div>
+                    <div class="icon">
+                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    </div></div
+                ></a>
+                <a href="#" class="flex user">
+                  <div class="items-center gap-4 flex basis-[60%]">
+                    <span class="flex-1 uppercase">dev1</span>
+                    <span class="flex-1">dev1@briswell.com</span>
+                    <span class="flex-1 text-right">一般ユーザ</span>
+                  </div>
+                  <div class="items-center gap-4 flex basis-[40%]">
+                    <span class="flex-1 text-center">１分</span>
+                    <div class="flex status-button enabled">
+                      <span>有効</span>
+                    </div>
+                    <div class="icon">
+                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    </div></div
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $('#filterStatus').click(function () {
+          $(this).next('ul').toggle();
+        });
+
+        $('#filterStatusValue li').click(function () {
+          var selectTxt = '';
+          if ($(this).val() != '') {
+            selectTxt = ': ' + $(this).text().trim();
+          }
+
+          $('#filterBy').text(selectTxt);
+          $('#filterStatusValue').toggle();
+        });
+
+        $(document).click(function (e) {
+          var self = e.target;
+          if (
+            $(self).closest('#filterStatus').length ||
+            $(self).closest('#filterStatusValue').length
+          ) {
+            return;
+          }
+
+          $('#filterStatusValue').hide();
+        });
+      });
+    </script>
+  </body>
+</html>

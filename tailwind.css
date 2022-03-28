@@ -14,3 +14,28 @@
 [name='reSinPass']:focus + span {
   width: calc(100% + 20px);
 }
+
+button,
+.button {
+  @apply cursor-pointer rounded-[24px] border-0 mr-[8px];
+}
+button:hover,
+.button:hover {
+  @apply opacity-90;
+}
+
+.user {
+  @apply cursor-pointer gap-4 mb-4 rounded-[20px] py-[28px] px-[32px] bg-gray-200 items-center;
+}
+
+.status-button {
+  @apply mr-[30px] items-center py-[8px] px-[30px];
+}
+
+.disabled {
+  @apply text-red-900 font-bold text-lg;
+}
+
+.enabled {
+  @apply text-blue-900 font-bold text-lg;
+}
