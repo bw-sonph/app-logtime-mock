@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login</title>
+    <title>First Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -18,22 +18,11 @@
             <span
               class="leading-tight text-[30px] text-center block absolute w-full top-0 left-0 bg-[#57b846] pt-12 pb-10 text-white"
             >
-              Briswell.com
+              パスワード変更
             </span>
             <div
               class="relative w-full bg-white rounded-[27px] z-[1] mt-2 mb-4"
             >
-              <input
-                class="block relative text-sm text-[#1b3815] leading-tight w-full h-[55px] bg-[#ebebeb] rounded-[27px] py-0 px-9 focus:border-transparent focus:outline-[none]"
-                type="text"
-                name="username"
-                placeholder="ユーザ名"
-              />
-              <span
-                class="translate-x-[-50%] block absolute z-[-1] w-full h-full top-0 left-1/2 rounded-[31px] bg-[#ebebeb] pointer-events-none transition-all"
-              ></span>
-            </div>
-            <div class="relative w-full bg-white rounded-[27px] z-[1]">
               <input
                 class="block relative text-sm text-[#1b3815] leading-tight w-full h-[55px] bg-[#ebebeb] rounded-[27px] py-0 px-9 focus:border-transparent focus:outline-[none]"
                 type="password"
@@ -44,13 +33,35 @@
                 class="translate-x-[-50%] block absolute z-[-1] w-full h-full top-0 left-1/2 rounded-[31px] bg-[#ebebeb] pointer-events-none transition-all"
               ></span>
             </div>
+            <div class="relative w-full bg-white rounded-[27px] z-[1] mb-4">
+              <input
+                class="block relative text-sm text-[#1b3815] leading-tight w-full h-[55px] bg-[#ebebeb] rounded-[27px] py-0 px-9 focus:border-transparent focus:outline-[none]"
+                type="password"
+                name="sinPass"
+                placeholder="新しいパスワード"
+              />
+              <span
+                class="translate-x-[-50%] block absolute z-[-1] w-full h-full top-0 left-1/2 rounded-[31px] bg-[#ebebeb] pointer-events-none transition-all"
+              ></span>
+            </div>
+            <div class="relative w-full bg-white rounded-[27px] z-[1]">
+              <input
+                class="block relative text-sm text-[#1b3815] leading-tight w-full h-[55px] bg-[#ebebeb] rounded-[27px] py-0 px-9 focus:border-transparent focus:outline-[none]"
+                type="password"
+                name="reSinPass"
+                placeholder="確認"
+              />
+              <span
+                class="translate-x-[-50%] block absolute z-[-1] w-full h-full top-0 left-1/2 rounded-[31px] bg-[#ebebeb] pointer-events-none transition-all"
+              ></span>
+            </div>
 
             <div class="w-full flex flex-wrap justify-center mt-14 mb-24">
               <a
-                href="./index.html"
+                href="./login.html"
                 class="flex justify-center items-center py-0 px-[20px] w-full h-12 text-sm bg-[#57b846] text-white uppercase transition-all leading-tight rounded-3xl"
               >
-                ログイン
+                保存
               </a>
             </div>
           </form>
