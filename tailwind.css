@@ -15,21 +15,16 @@
   width: calc(100% + 20px);
 }
 
-/* button,
-.button {
-  @apply cursor-pointer rounded-[24px] border-0 mr-[8px];
-}
-button:hover,
-.button:hover {
-  @apply opacity-90;
-} */
-
 .user {
   @apply cursor-pointer mb-5 bg-gray-200 items-center rounded-[20px] p-3 lg:gap-4 lg:py-5 lg:px-[32px] ;
 }
 
 .status-button {
   @apply lg:mr-[30px] lg:items-center lg:py-[8px] lg:px-[30px];
+}
+
+.mx-icon-calendar {
+  @apply absolute top-1/2 right-2 -translate-y-1/2
 }
 
 @layer base {

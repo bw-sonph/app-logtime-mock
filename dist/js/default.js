@@ -37,7 +37,7 @@ $(document).ready(function () {
 
       setTimeout(function () {
         overlay.removeClass('opacity-0');
-      }, 10);
+      }, 100);
 
       $.ajax({
         url: 'popup/' + popupId + '.html',
@@ -51,7 +51,7 @@ $(document).ready(function () {
           setTimeout(function () {
             popup.removeClass('opacity-0');
             popup.removeClass('-translate-y-64');
-          }, 10);
+          }, 100);
         },
       });
     });
