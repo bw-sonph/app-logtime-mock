@@ -916,6 +916,11 @@ thead > tr, tr:not(:last-child) {
   margin-right: auto;
 }
 
+.-my-0 {
+  margin-top: -0px;
+  margin-bottom: -0px;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1044,6 +1049,14 @@ thead > tr, tr:not(:last-child) {
   height: 100vh;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1070,6 +1083,10 @@ thead > tr, tr:not(:last-child) {
 
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-\[850px\] {
+  max-width: 850px;
 }
 
 .flex-1 {
@@ -1344,6 +1361,16 @@ thead > tr, tr:not(:last-child) {
   padding-bottom: 2rem;
 }
 
+.py-\[40px\] {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -1357,6 +1384,16 @@ thead > tr, tr:not(:last-child) {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pt-\[148px\] {
@@ -1604,6 +1641,11 @@ thead > tr, tr:not(:last-child) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1631,12 +1673,20 @@ thead > tr, tr:not(:last-child) {
     margin-top: 5rem;
   }
 
+  .lg\:mt-\[72px\] {
+    margin-top: 72px;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
 
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:mt-4 {
+    margin-top: 1rem;
   }
 
   .lg\:block {
@@ -1697,6 +1747,11 @@ thead > tr, tr:not(:last-child) {
 
   .lg\:p-1 {
     padding: 0.25rem;
+  }
+
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .lg\:text-center {
