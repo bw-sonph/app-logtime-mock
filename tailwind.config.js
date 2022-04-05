@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  content: ['./dist/*.html', './dist/js/*.js'],
+  content: ['./dist/*.html', './dist/**/*.html', './dist/js/*.js'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
