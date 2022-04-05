@@ -1,4 +1,17 @@
 $(document).ready(function () {
+  $('.load-content-html').each(function () {
+    var ref = $(this);
+    var config = $(this).data('config');
+
+    $(this).load(config.link, function () {
+      $.each(config, function (c) {
+        if (c !== 'link') {
+          ref.html(ref.html().replace('{{ ' + c + ' }}', config[c]));
+        }
+      });
+    });
+  });
+
   $('body').on('click', '.close-popup-btn, .overlay', function () {
     closePopup($('.close-popup-btn:last'));
   });

@@ -14,9 +14,24 @@
     <div id="app">
       <div>
         <div class="bg-gray-200 flex flex-col min-h-screen lg:flex-row">
-          
+          <header
+            class="flex bg-[#252525] z-[99] lg:flex-col shadow-lg relative load-content-html"
+            data-config='{"link":"common/header.html"}'
+          ></header>
+
+          <!-- MAIN -->
+          <div class="flex flex-col relative flex-1 px-[20px] my-5 lg:mt-0">
+            <div
+              class="w-full py-[40px] px-3 md:px-5 lg:px-8 max-w-[850px] -my-0 mx-auto lg:mt-[72px] bg-white shadow-md rounded-[20px]"
+            >
+              ABC
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/default.js"></script>
   </body>
 </html>

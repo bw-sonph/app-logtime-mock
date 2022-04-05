@@ -14,33 +14,10 @@
     <div id="app">
       <div>
         <div class="bg-gray-200 flex flex-col min-h-screen lg:flex-row">
-          <!-- HEADEER TOOLBARS -->
           <header
-            class="flex bg-[#252525] z-[99] lg:flex-col shadow-lg relative"
-          >
-            <!-- LOGOUT -->
-            <div
-              ref="logout-modal"
-              class="bg-red-400 mb-0 order-last p-4 cursor-pointer absolute right-0 lg:right-auto lg:static md:mb-2 lg:w-full hover:opacity-90 openPopup"
-            >
-              <img
-                class="h-6 w-6 bg-transparent"
-                src="./images/icon-logout.svg"
-                alt=""
-              />
-            </div>
-
-            <!-- USERS -->
-            <div
-              class="bg-[#57b846] justify-center p-4 cursor-pointer lg:mb-1 lg:w-full hover:opacity-90"
-            >
-              <img
-                class="h-6 w-6 bg-transparent"
-                src="./images/icon-users.svg"
-                alt=""
-              />
-            </div>
-          </header>
+            class="flex bg-[#252525] z-[99] lg:flex-col shadow-lg relative load-content-html"
+            data-config='{"link":"common/header.html"}'
+          ></header>
 
           <!-- MAIN -->
           <div class="flex flex-col relative flex-1 px-[20px] my-5 lg:mt-0">

@@ -872,10 +872,6 @@ thead > tr, tr:not(:last-child) {
   z-index: 99;
 }
 
-.order-last {
-  order: 9999;
-}
-
 .order-2 {
   order: 2;
 }
@@ -886,6 +882,10 @@ thead > tr, tr:not(:last-child) {
 
 .order-3 {
   order: 3;
+}
+
+.order-last {
+  order: 9999;
 }
 
 .col-span-2 {
@@ -933,10 +933,6 @@ thead > tr, tr:not(:last-child) {
   margin-bottom: 6rem;
 }
 
-.mb-0 {
-  margin-bottom: 0px;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -947,6 +943,10 @@ thead > tr, tr:not(:last-child) {
 
 .mr-\[8px\] {
   margin-right: 8px;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mt-6 {
@@ -1504,16 +1504,16 @@ button:hover,
 }
 
 @media (min-width: 768px) {
-  .md\:mb-2 {
-    margin-bottom: 0.5rem;
-  }
-
   .md\:mb-12 {
     margin-bottom: 3rem;
   }
 
   .md\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .md\:mb-2 {
+    margin-bottom: 0.5rem;
   }
 
   .md\:grid {
@@ -1555,10 +1555,6 @@ button:hover,
     grid-column: span 3 / span 3;
   }
 
-  .lg\:mb-1 {
-    margin-bottom: 0.25rem;
-  }
-
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -1569,6 +1565,10 @@ button:hover,
 
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mb-1 {
+    margin-bottom: 0.25rem;
   }
 
   .lg\:block {
