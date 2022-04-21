@@ -2,31 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (max-width: 576px) {
-  #frmLogin {
-    @apply px-4;
-  }
-}
-
-[name='username']:focus + span,
-[name='pass']:focus + span,
-[name='sinPass']:focus + span,
-[name='reSinPass']:focus + span {
-  width: calc(100% + 20px);
-}
-
-.user {
-  @apply cursor-pointer mb-5 bg-gray-200 items-center rounded-[20px] p-3 lg:gap-4 lg:py-5 lg:px-[32px] ;
-}
-
-.status-button {
-  @apply lg:mr-[30px] lg:items-center lg:py-[8px] lg:px-[30px];
-}
-
-.mx-icon-calendar {
-  @apply absolute top-1/2 right-2 -translate-y-1/2
-}
-
 @layer base {
   * {
     font-family: 'Noto Sans JP', sans-serif;
@@ -149,4 +124,33 @@
   tr:not(:last-child) {
     @apply border-b;
   }
+}
+
+@media (max-width: 576px) {
+  #frmLogin {
+    @apply px-4;
+  }
+}
+
+[name='username']:focus + span,
+[name='pass']:focus + span,
+[name='sinPass']:focus + span,
+[name='reSinPass']:focus + span {
+  width: calc(100% + 20px);
+}
+
+.user {
+  @apply cursor-pointer mb-5 bg-gray-200 items-center rounded-[20px] p-3 lg:gap-4 lg:py-5 lg:px-[32px] ;
+}
+
+.status-button {
+  @apply lg:mr-[30px] lg:items-center lg:py-[8px] lg:px-[30px];
+}
+
+.mx-icon-calendar {
+  @apply absolute top-1/2 right-2 -translate-y-1/2
+}
+
+.active {
+  @apply bg-[#57b846] mx-2 rounded-2xl 
 }

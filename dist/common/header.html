@@ -1,17 +1,57 @@
 <!-- HEADEER TOOLBARS -->
-<!-- LOGOUT -->
-<div
-  ref="logout-modal"
-  class="bg-red-300 mb-0 order-last p-4 cursor-pointer absolute right-0 lg:right-auto lg:static md:mb-2 lg:w-full hover:opacity-90 openPopup"
->
-  <img class="h-6 w-6 bg-transparent" src="./images/icon-logout.svg" alt="" />
-</div>
+<div class="h-full overflow-y-auto overflow-x-hidden bg-white">
+  <div class="pt-5">
+    <!-- USERS -->
+    <a
+      href="./users.html"
+      class="justify-center cursor-pointer items-center flex flex-[1_1_100%] tracking-normal min-h-[48px] pt-0 px-3 active"
+    >
+      <div
+        class="mx-0 items-center self-center flex flex-wrap overflow-hidden px-0 py-3"
+      >
+        <img
+          class="h-7 w-7 mb-1 items-center inline-flex flex-[1_0_100%] justify-center relative"
+          src="./images/icon-users-active.svg"
+          alt=""
+        />
+        <div
+          class="text-white leading-tight mt-1 text-[0.75rem] font-normal tracking-[0.033333em]"
+        >
+          ユーザー
+        </div>
+      </div>
+    </a>
 
-<!-- USERS -->
-<a href="./users.html">
-  <div
-    class="bg-[#57b846] justify-center p-4 cursor-pointer lg:w-full hover:opacity-90"
-  >
-    <img class="h-6 w-6 bg-transparent" src="./images/icon-users.svg" alt="" />
+    <!-- USERS -->
+    <div
+      class="text-opacity-[54] justify-center cursor-pointer items-center flex flex-[1_1_100%] tracking-normal min-h-[48px] pt-0 px-3"
+    >
+      <div
+        class="mx-0 items-center self-center flex flex-wrap overflow-hidden px-0 py-3"
+      >
+        <img
+          class="h-7 w-7 mb-1 items-center inline-flex flex-[1_0_100%] justify-center relative"
+          src="./images/icon-schedule.svg"
+          alt=""
+        />
+        <div
+          class="leading-tight mt-1 text-[0.75rem] flex-[1_0_100%] text-center font-normal tracking-[0.033333em] text-[#757575]"
+        >
+          出社体制
+        </div>
+      </div>
+    </div>
   </div>
-</a>
+
+  <div class="absolute bottom-5 mx-auto text-center left-0 right-0">
+    <!-- LOGOUT -->
+    <div ref="logout-modal" class="openPopup mx-0 cursor-pointer items-center self-center flex flex-wrap overflow-hidden px-0 py-3">
+      <img
+        class="h-7 w-7 mb-1 items-center inline-flex flex-[1_0_100%] justify-center relative"
+        src="./images/icon-logout.svg"
+        alt=""
+      />
+      <div class="leading-tight mt-1 text-[0.75rem] flex-[1_0_100%] text-center font-normal tracking-[0.033333em] text-[#757575]">ログアウト</div>
+    </div>
+  </div>
+</div>
