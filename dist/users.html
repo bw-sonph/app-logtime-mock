@@ -13,216 +13,233 @@
   <body>
     <div id="app">
       <div>
-        <div class="bg-gray-200 flex flex-col min-h-screen lg:flex-row">
+        <div class="flex min-h-screen bg-screen">
+          <header
+            class="load-content-html fixed z-40 h-10 md:h-14 w-full left-0 bg-white shadow-md lg:hidden"
+            data-config='{"link":"common/top-sidebar.html"}'
+          ></header>
 
-          <nav class="load-content-html hidden lg:block h-screen max-h-[calc(100%_-_0px)] fixed w-[90px]" data-config='{"link":"common/header.html"}'></nav>
+          <nav
+            id="leftSideMenu"
+            class="load-content-html h-screen max-h-[calc(100%_-_0px)] fixed w-[90px] -left-64 lg:left-0 transition-all z-50"
+            data-config='{"link":"common/left-side-bar.html"}'
+          ></nav>
 
           <!-- LIST -->
-          <div class="w-full md:px-5 lg:px-8 max-w-4xl -my-0 mx-auto lg:mt-20 bg-white shadow-md rounded-2xl">
-            <div class="px-6 py-8">
-              <!-- HEADER -->
-              <div class="flex flex-col mb-8 lg:grid lg:grid-cols-5 md:mb-12">
-                <div class="flex flex-col gap-1 mb-4 lg:mb-0 lg:col-span-2">
-                  <h1 class="text-2xl lg:text-xl font-bold">ユーザ一覧</h1>
-                  <span>4件中4件見つかりました</span>
-                </div>
-
-                <!-- TOOLS -->
-                <div
-                  class="flex-none items-center justify-between lg:flex lg:mt-0 lg:col-span-3 md:grid md:grid-cols-2"
-                >
-                  <div class="mb-4 md:mb-0 md:grid md:grid-cols-3">
-                    <div class="py-2.5 mr-4">ステータス</div>
-                    <select class="col-span-2 w-full">
-                      <option class="text-sm" value="">---</option>
-                      <option class="text-sm" value="2">無効</option>
-                      <option class="text-sm" value="1">有効</option>
-                    </select>
+          <div class="p-2 pt-14 md:p-4 md:pt-[4.5rem] lg:p-0 lg:pt-0 bg-gray-100 w-full h-full">
+            <div
+              class="w-full md:px-5 lg:px-8 max-w-4xl -my-0 mx-auto lg:mt-20 bg-white shadow-md rounded-2xl"
+            >
+              <div class="px-6 py-8">
+                <!-- HEADER -->
+                <div class="flex flex-col mb-8 lg:grid lg:grid-cols-5 md:mb-12">
+                  <div class="flex flex-col gap-1 mb-4 lg:mb-0 lg:col-span-2">
+                    <h1 class="text-2xl lg:text-xl font-bold">ユーザ一覧</h1>
+                    <span>4件中4件見つかりました</span>
                   </div>
 
-                  <div id="buttonList" class="flex justify-end">
-                    <a
-                      href="./user-add.html"
-                      class="flex items-center mt-3 py-2 px-4 rounded-lg bg-[#57b846] hover:opacity-90 md:mt-0"
-                    >
-                      <div
-                        class="mr-2 rounded-[50%] p-1.5 lg:p-1 items-center justify-center bg-white"
+                  <!-- TOOLS -->
+                  <div
+                    class="flex-none items-center justify-between lg:flex lg:mt-0 lg:col-span-3 md:grid md:grid-cols-2"
+                  >
+                    <div class="mb-4 md:mb-0 md:grid md:grid-cols-3">
+                      <div class="py-2.5 mr-4">ステータス</div>
+                      <select class="col-span-2 w-full">
+                        <option class="text-sm" value="">---</option>
+                        <option class="text-sm" value="2">無効</option>
+                        <option class="text-sm" value="1">有効</option>
+                      </select>
+                    </div>
+
+                    <div id="buttonList" class="flex justify-end">
+                      <a
+                        href="./user-add.html"
+                        class="flex items-center mt-3 py-2 px-4 rounded-lg bg-[#57b846] hover:opacity-90 md:mt-0"
                       >
-                        <img src="./images/icon-plus.svg" alt="" />
-                      </div>
-                      <span class="text-white">ユーザ一</span>
-                    </a>
+                        <div
+                          class="mr-2 rounded-[50%] p-1.5 lg:p-1 items-center justify-center bg-white"
+                        >
+                          <img src="./images/icon-plus.svg" alt="" />
+                        </div>
+                        <span class="text-white">ユーザ一</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- users list -->
-              <div>
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                <!-- users list -->
+                <div>
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">son.ph</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >son.ph@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >組織管理者</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-red-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>無効</span>
+                      <span class="uppercase order-2 lg:flex-1">son.ph</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >son.ph@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">組織管理者</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-red-900 font-bold text-lg"
+                      >
+                        <span>無効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">dev1</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >dev1@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >一般ユーザ</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>有効</span>
+                      <span class="uppercase order-2 lg:flex-1">dev1</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >dev1@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">一般ユーザ</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      >
+                        <span>有効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">dev2</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >dev2@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >一般ユーザ</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>有効</span>
+                      <span class="uppercase order-2 lg:flex-1">dev2</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >dev2@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">一般ユーザ</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      >
+                        <span>有効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">dev3</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >dev3@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >一般ユーザ</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>有効</span>
+                      <span class="uppercase order-2 lg:flex-1">dev3</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >dev3@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">一般ユーザ</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      >
+                        <span>有効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">dev4</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >dev3@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >一般ユーザ</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>有効</span>
+                      <span class="uppercase order-2 lg:flex-1">dev4</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >dev3@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">一般ユーザ</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      >
+                        <span>有効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
 
-                <a href="./user-edit.html" class="flex flex-col lg:flex-row user">
-                  <div
-                    class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
+                  <a
+                    href="./user-edit.html"
+                    class="flex flex-col lg:flex-row user"
                   >
-                    <span class="uppercase order-2 lg:flex-1">dev5</span>
-                    <span class="order-1 col-span-2 lg:flex-1"
-                      >dev3@briswell.com</span
-                    >
-                    <span class="order-3 text-right lg:flex-1"
-                      >一般ユーザ</span
-                    >
-                  </div>
-                  <div
-                    class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
-                  >
-                    <span class="lg:flex-1 lg:text-center">１分</span>
                     <div
-                      class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      class="w-full grid grid-cols-2 gap-1 lg:items-center lg:flex lg:gap-4 lg:basis-[60%]"
                     >
-                      <span>有効</span>
+                      <span class="uppercase order-2 lg:flex-1">dev5</span>
+                      <span class="order-1 col-span-2 lg:flex-1"
+                        >dev3@briswell.com</span
+                      >
+                      <span class="order-3 text-right lg:flex-1">一般ユーザ</span>
                     </div>
-                    <div class="icon hidden lg:block">
-                      <img src="./images/icon-arrow-right.svg" alt="" />
+                    <div
+                      class="w-full grid grid-cols-2 lg:flex lg:items-center lg:gap-4 lg:basis-[40%]"
+                    >
+                      <span class="lg:flex-1 lg:text-center">１分</span>
+                      <div
+                        class="text-right lg:flex status-button text-blue-900 font-bold text-lg"
+                      >
+                        <span>有効</span>
+                      </div>
+                      <div class="icon hidden lg:block">
+                        <img src="./images/icon-arrow-right.svg" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

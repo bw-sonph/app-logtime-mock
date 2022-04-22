@@ -13,186 +13,199 @@
   <body>
     <div id="app">
       <div>
-        <div class="bg-gray-200 flex flex-col min-h-screen lg:flex-row">
+        <div class="flex flex-col min-h-screen lg:flex-row bg-screen">
+          <header
+            class="load-content-html fixed z-40 h-10 md:h-14 w-full left-0 bg-white shadow-md lg:hidden"
+            data-config='{"link":"common/top-sidebar.html"}'
+          ></header>
 
           <!-- MAIN -->
-          <nav class="load-content-html hidden lg:block h-screen max-h-[calc(100%_-_0px)] fixed w-[90px]" data-config='{"link":"common/header.html"}'></nav>
+          <nav
+            id="leftSideMenu"
+            class="load-content-html h-screen max-h-[calc(100%_-_0px)] fixed w-[90px] -left-64 lg:left-0 transition-all z-50"
+            data-config='{"link":"common/left-side-bar.html"}'
+          ></nav>
 
-          <div class="w-full md:px-5 lg:px-8 max-w-4xl -my-0 mx-auto lg:mt-20 bg-white shadow-md rounded-2xl">
-            <div class="px-4 border-b flex items-center h-16 justify-end">
-              <div class="space-x-2 text-base text-white">
-                <a
-                  href="./users.html"
-                  class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#57b846]"
-                >
-                  <img
-                    src="./images/icon-save.svg"
-                    class="mb-0.5 h-4 pr-2 inline-block"
-                  />
-                  <span>保存</span>
-                </a>
-                <button
-                  ref="confirm-leave-modal"
-                  class="openPopup rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#FAB525]"
-                >
-                  <img
-                    src="./images/icon-cancel.svg"
-                    class="mb-0.5 h-4 pr-2 inline-block"
-                  />
-                  <span>キャンセル</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- FORM -->
-            <div class="px-6 py-8">
-              <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mb-11">
-                <div class="flex flex-col lg:col-span-2">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >メールアドレス<span class="text-red-500">*</span></label
+          <div class="p-2 pt-14 md:p-4 md:pt-[4.5rem] lg:p-0 lg:pt-0 bg-gray-100 w-full h-full">
+            <div
+              class="w-full md:px-5 lg:px-8 max-w-4xl -my-0 mx-auto lg:mt-20 bg-white shadow-md rounded-2xl"
+            >
+              <div class="px-4 border-b flex items-center h-16 justify-end">
+                <div class="space-x-2 text-base text-white">
+                  <a
+                    href="./users.html"
+                    class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#57b846]"
                   >
-                  <input
-                    type="text"
-                    class="text-sm"
-                    placeholder="メールアドレス"
-                  />
-                </div>
-
-                <div class="flex flex-col lg:col-span-2">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >アバター<span class="text-red-500">*</span></label
-                  >
-                  <div class="flex items-center">
-                    <img src="./images/avatar.svg" class="w-20 mr-5" />
-                    <button
-                      id="avatarBtn"
-                      class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#252525] text-white text-sm"
-                    >
-                      <img
-                        src="./images/icon-avatar.svg"
-                        class="mb-0.5 h-4 pr-2 inline-block"
-                      />
-                      <span>ファイルを選択...</span>
-                    </button>
-                    <input
-                      id="avatarHd"
-                      accept="image/jpeg, image/png"
-                      type="file"
-                      class="hidden"
+                    <img
+                      src="./images/icon-save.svg"
+                      class="mb-0.5 h-4 pr-2 inline-block"
                     />
-                  </div>
+                    <span>保存</span>
+                  </a>
+                  <button
+                    ref="confirm-leave-modal"
+                    class="openPopup rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#FAB525]"
+                  >
+                    <img
+                      src="./images/icon-cancel.svg"
+                      class="mb-0.5 h-4 pr-2 inline-block"
+                    />
+                    <span>キャンセル</span>
+                  </button>
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >担当者名<span class="text-red-500">*</span></label
-                  >
-                  <input type="text" class="text-sm" placeholder="担当者名" />
-                </div>
-
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >権限<span class="text-red-500">*</span></label
-                  >
-                  <select class="text-gray-800">
-                    <option value="0">組織管理者</option>
-                    <option value="1" selected>一般ユーザ</option>
-                  </select>
-                </div>
-
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800">携帯番号</label>
-                  <input type="text" class="text-sm" placeholder="携帯番号" />
-                </div>
-
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >誕生日<span class="text-red-500">*</span></label
-                  >
-                  <div class="relative">
-                    <input type="text" class="text-sm" placeholder="誕生日" />
-                    <i class="mx-icon-calendar">
-                      <img src="./images/icon-calendar.svg" />
-                    </i>
-                  </div>
-                </div>
-
-                <div class="flex flex-col lg:col-span-2">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >住所<span class="text-red-500">*</span></label
-                  >
-                  <textarea
-                    type="text"
-                    class="text-sm"
-                    placeholder="住所"
-                  ></textarea>
-                </div>
-
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800">Twitter</label>
-                  <input type="text" class="text-sm" placeholder="Twitter" />
-                </div>
-
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800">Facebook</label>
-                  <div class="relative">
+              <!-- FORM -->
+              <div class="px-6 py-8">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mb-11">
+                  <div class="flex flex-col md:col-span-2">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >メールアドレス<span class="text-red-500">*</span></label
+                    >
                     <input
                       type="text"
                       class="text-sm"
-                      placeholder="Facebook"
+                      placeholder="メールアドレス"
                     />
+                  </div>
+
+                  <div class="flex flex-col md:col-span-2">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >アバター<span class="text-red-500">*</span></label
+                    >
+                    <div class="flex items-center">
+                      <img src="./images/avatar.svg" class="w-20 mr-5" />
+                      <button
+                        id="avatarBtn"
+                        class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#252525] text-white text-sm"
+                      >
+                        <img
+                          src="./images/icon-avatar.svg"
+                          class="mb-0.5 h-4 pr-2 inline-block"
+                        />
+                        <span>ファイルを選択...</span>
+                      </button>
+                      <input
+                        id="avatarHd"
+                        accept="image/jpeg, image/png"
+                        type="file"
+                        class="hidden"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div class="flex flex-col">
-                  <label class="text-sm mb-2 text-gray-800"
-                    >アクセス権限</label
-                  >
-                  <div
-                    class="px-6 py-8 mb-6 mix-blend-normal border-gray-140 border-solid border rounded-lg bg-[#F4F5F9]"
-                  >
-                    <div class="flex items-center">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mb-4">
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >担当者名<span class="text-red-500">*</span></label
+                    >
+                    <input type="text" class="text-sm" placeholder="担当者名" />
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >権限<span class="text-red-500">*</span></label
+                    >
+                    <select class="text-gray-800">
+                      <option value="0">組織管理者</option>
+                      <option value="1" selected>一般ユーザ</option>
+                    </select>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800">携帯番号</label>
+                    <input type="text" class="text-sm" placeholder="携帯番号" />
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >誕生日<span class="text-red-500">*</span></label
+                    >
+                    <div class="relative">
+                      <input type="text" class="text-sm" placeholder="誕生日" />
+                      <i class="mx-icon-calendar">
+                        <img src="./images/icon-calendar.svg" />
+                      </i>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col lg:col-span-2">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >住所<span class="text-red-500">*</span></label
+                    >
+                    <textarea
+                      type="text"
+                      class="text-sm"
+                      placeholder="住所"
+                    ></textarea>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800">Twitter</label>
+                    <input type="text" class="text-sm" placeholder="Twitter" />
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800">Facebook</label>
+                    <div class="relative">
                       <input
-                        class="border-gray-110 w-6 h-6 rounded mr-5"
-                        type="checkbox"
+                        type="text"
+                        class="text-sm"
+                        placeholder="Facebook"
                       />
-                      <div class="col-span-7 text-blue-110 text-sm text-gray-800">
-                        出社体制
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col">
+                    <label class="text-sm mb-2 text-gray-800"
+                      >アクセス権限</label
+                    >
+                    <div
+                      class="px-6 py-8 mb-6 mix-blend-normal border-gray-140 border-solid border rounded-lg bg-[#F4F5F9]"
+                    >
+                      <div class="flex items-center">
+                        <input
+                          class="border-gray-110 w-6 h-6 rounded mr-5"
+                          type="checkbox"
+                        />
+                        <div
+                          class="col-span-7 text-blue-110 text-sm text-gray-800"
+                        >
+                          出社体制
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="px-4 border-t flex items-center h-16 justify-end">
-              <div class="space-x-2 text-base text-white">
-                <a
-                  href="./users.html"
-                  class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#57b846]"
-                >
-                  <img
-                    src="./images/icon-save.svg"
-                    class="mb-0.5 h-4 pr-2 inline-block"
-                  />
-                  <span>保存</span>
-                </a>
-                <button
-                  ref="confirm-leave-modal"
-                  class="openPopup rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#FAB525]"
-                >
-                  <img
-                    src="./images/icon-cancel.svg"
-                    class="mb-0.5 h-4 pr-2 inline-block"
-                  />
-                  <span>キャンセル</span>
-                </button>
+              <div class="px-4 border-t flex items-center h-16 justify-end">
+                <div class="space-x-2 text-base text-white">
+                  <a
+                    href="./users.html"
+                    class="rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#57b846]"
+                  >
+                    <img
+                      src="./images/icon-save.svg"
+                      class="mb-0.5 h-4 pr-2 inline-block"
+                    />
+                    <span>保存</span>
+                  </a>
+                  <button
+                    ref="confirm-leave-modal"
+                    class="openPopup rounded-lg px-4 py-2 transition-all items-center inline-flex bg-[#FAB525]"
+                  >
+                    <img
+                      src="./images/icon-cancel.svg"
+                      class="mb-0.5 h-4 pr-2 inline-block"
+                    />
+                    <span>キャンセル</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,0 +1,18 @@
+<nav class="h-full px-2 md:px-4 flex flex-row justify-between items-center">
+  <div class="flex items-center" id="MenuBtn">
+    <img src="./images/icon-leftside.svg" class="w-6 h-6 mr-2" />
+  </div>
+  <div>
+    <ul class="flex flex-row space-x-2">
+      <li
+        class="flex items-center lg:hidden rounded-md bg-white py-1 cursor-pointer transition-all"
+      >
+        <img ref="logout-modal" src="./images/icon-logout.svg" alt="" class="w-6 h-6 openPopup">
+      </li>
+    </ul>
+  </div>
+  <div
+    id="overlayMenu"
+    class="fixed z-50 top-0 right-0 w-full h-full bg-gray-800 bg-opacity-60 hidden"
+  ></div>
+</nav>

@@ -56,6 +56,19 @@ $(document).ready(function () {
       });
     });
   });
+
+  // SP版のレフトメニュー
+  $('body').on('click', '#MenuBtn', function () {
+    $('#overlayMenu').removeClass('hidden');
+    $('body').addClass('overflow-hidden');
+    $('#leftSideMenu').removeClass('-left-64').addClass('left-0');
+  });
+
+  $('body').on('click', '#overlayMenu', function () {
+    $('#overlayMenu').addClass('hidden');
+    $('#leftSideMenu').removeClass('left-0').addClass('-left-64');
+    $('body').removeClass('overflow-hidden');
+  });
 });
 
 function createOverLay() {

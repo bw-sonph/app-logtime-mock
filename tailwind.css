@@ -154,3 +154,7 @@
 .active {
   @apply bg-[#57b846] mx-2 rounded-2xl 
 }
+
+.bg-screen {
+  @apply bg-[#E4E7EB]
+}
