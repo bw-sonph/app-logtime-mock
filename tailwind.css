@@ -158,3 +158,24 @@
 .bg-screen {
   @apply bg-[#E4E7EB]
 }
+
+.table-fixed-column-container select {
+  @apply bg-[right_0.2rem_center] bg-[length:1em_1em] py-[0.2rem] pr-[15px] pl-[4px] min-w-[50px] text-center text-[0.85rem]
+}
+
+.table-fixed-column-container tbody > tr > td {
+  @apply px-[0.3rem]
+}
+
+.table-fixed-column-container .fixed-area table
+, .table-fixed-column-container .scroll-area table {
+  @apply border-t border-l
+}
+
+.table-fixed-column-container th, td {
+  @apply border-b border-r
+}
+
+.table-fixed-column-container tr:nth-child(odd):not(.not-color) {
+  @apply bg-green-100
+}
