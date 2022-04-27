@@ -139,8 +139,20 @@
   width: calc(100% + 20px);
 }
 
+.css-i1mjhi {
+  grid-template-columns:
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
+    minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr);
+}
+
 .user {
-  @apply cursor-pointer mb-5 bg-gray-200 items-center rounded-[20px] p-3 lg:gap-4 lg:py-5 lg:px-[32px] ;
+  @apply cursor-pointer mb-5 bg-gray-200 items-center rounded-[20px] p-3 lg:gap-4 lg:py-5 lg:px-[32px];
 }
 
 .status-button {
@@ -148,34 +160,62 @@
 }
 
 .mx-icon-calendar {
-  @apply absolute top-1/2 right-2 -translate-y-1/2
+  @apply absolute top-1/2 right-2 -translate-y-1/2;
 }
 
 .active {
-  @apply bg-[#57b846] mx-2 rounded-2xl 
+  @apply bg-[#57b846] mx-2 rounded-2xl;
 }
 
 .bg-screen {
-  @apply bg-[#E4E7EB]
+  @apply bg-[#E4E7EB];
 }
 
-.table-fixed-column-container select {
-  @apply bg-[right_0.2rem_center] bg-[length:1em_1em] py-[0.2rem] pr-[15px] pl-[4px] min-w-[50px] text-center text-[0.85rem]
-}
-
-.table-fixed-column-container tbody > tr > td {
-  @apply px-[0.3rem]
-}
-
-.table-fixed-column-container .fixed-area table
-, .table-fixed-column-container .scroll-area table {
+.theadEl, #tbodyEl {
   @apply border-t border-l
 }
 
-.table-fixed-column-container th, td {
+.theadEl > div,
+#tbodyEl .css-i1mjhi > div {
   @apply border-b border-r
 }
 
-.table-fixed-column-container tr:nth-child(odd):not(.not-color) {
+.theadEl > div {
+  @apply py-2 text-center
+}
+
+#tbodyEl .css-i1mjhi > div {
+  @apply py-2.5 text-center
+}
+
+#tbodyEl .css-i1mjhi select {
+  @apply bg-[right_0.2rem_center] bg-[length:1em_1em] py-[0.2rem] pr-[15px] pl-[4px] max-w-[55px] text-center text-[0.85rem]
+}
+
+.sticky:first-child {
+  @apply bg-orange-200
+}
+
+.sticky .theadEl div {
+  @apply h-10
+}
+
+.sticky:first-child .theadEl div
+, .sticky:nth-child(2) .theadEl div:first-child {
+  @apply font-bold text-[0.85rem]
+}
+
+.sticky:nth-child(2) {
+  @apply bg-sky-200
+}
+
+.sticky:nth-child(2) div:not(:first-child) {
+  @apply font-bold text-red-500;
+}
+
+#tbodyEl div.relative .css-i1mjhi:nth-child(even) {
   @apply bg-green-100
+}
+#tbodyEl div.css-i1mjhi div:first-child {
+  @apply text-[0.85rem]
 }

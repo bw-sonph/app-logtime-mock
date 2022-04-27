@@ -1,4 +1,8 @@
 $(document).ready(function () {
+  if (tbodyEl !== null) {
+    tbodyEl.addEventListener('scroll', scrollEventHanlder);
+  }
+
   $('.load-content-html').each(function () {
     var ref = $(this);
     var config = $(this).data('config');
@@ -70,6 +74,18 @@ $(document).ready(function () {
     $('body').removeClass('overflow-hidden');
   });
 });
+
+var theadEl = document.getElementsByClassName('theadEl');
+var tbodyEl = document.getElementById('tbodyEl');
+
+function scrollEventHanlder() {
+  theadEl[0].scroll({
+    left: tbodyEl.scrollLeft,
+  });
+  theadEl[1].scroll({
+    left: tbodyEl.scrollLeft,
+  });
+}
 
 function createOverLay() {
   // Overlay Effect
