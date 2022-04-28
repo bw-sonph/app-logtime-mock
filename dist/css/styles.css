@@ -865,12 +865,12 @@ thead > tr, tr:not(:last-child) {
   left: -16rem;
 }
 
-.top-\[calc\(2\.5rem-2px\)\] {
-  top: calc(2.5rem - 2px);
+.top-\[calc\(2\.5rem\)\] {
+  top: calc(2.5rem);
 }
 
-.top-\[calc\(5rem-1px\)\] {
-  top: calc(5rem - 1px);
+.top-\[calc\(5rem\)\] {
+  top: calc(5rem);
 }
 
 .bottom-5 {
@@ -879,22 +879,6 @@ thead > tr, tr:not(:last-child) {
 
 .right-0 {
   right: 0px;
-}
-
-.top-\[calc\(2\.5rem\)\] {
-  top: calc(2.5rem);
-}
-
-.top-\[calc\(2\.5rem\+1px\)\] {
-  top: calc(2.5rem + 1px);
-}
-
-.top-\[calc\(5rem\)\] {
-  top: calc(5rem);
-}
-
-.top-\[calc\(7rem\)\] {
-  top: calc(7rem);
 }
 
 .z-\[1\] {
@@ -913,8 +897,8 @@ thead > tr, tr:not(:last-child) {
   z-index: 50;
 }
 
-.z-10 {
-  z-index: 10;
+.z-20 {
+  z-index: 20;
 }
 
 .order-2 {
@@ -1753,6 +1737,8 @@ thead > tr, tr:not(:last-child) {
   background-color: rgb(228 231 235 / var(--tw-bg-opacity));
 }
 
+/* SCHEDULES */
+
 .theadEl, #tbodyEl {
   border-top-width: 1px;
   border-left-width: 1px;
@@ -1787,11 +1773,6 @@ thead > tr, tr:not(:last-child) {
   font-size: 0.85rem;
 }
 
-.sticky:first-child {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
-}
-
 .sticky .theadEl div {
   height: 2.5rem;
 }
@@ -1801,24 +1782,43 @@ thead > tr, tr:not(:last-child) {
   font-weight: 700;
 }
 
-.sticky:nth-child(2) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
-}
-
 .sticky:nth-child(2) div:not(:first-child) {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-#tbodyEl div.relative .css-i1mjhi:nth-child(even) {
+#tbodyEl div.relative .grid:nth-child(even), #tbodyEl .grid:nth-child(even) div:first-child {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 
-#tbodyEl div.css-i1mjhi div:first-child {
+#tbodyEl .grid:nth-child(odd) div:first-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+#tbodyEl div.grid div:first-child {
   font-size: 0.85rem;
+}
+
+.sticky:first-child, .sticky:first-child .theadEl div:first-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
+}
+
+.sticky:nth-child(2), .sticky:nth-child(2) .theadEl div:first-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
+}
+
+.sticky:first-child .theadEl div:first-child
+, .sticky:nth-child(2) .theadEl div:first-child
+, #tbodyEl .grid div:first-child {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 10;
 }
 
 .hover\:bg-orange-100:hover {
@@ -1845,36 +1845,8 @@ thead > tr, tr:not(:last-child) {
 }
 
 @media (min-width: 768px) {
-  .md\:top-\[calc\(2\.5rem\+2px\)\] {
-    top: calc(2.5rem + 2px);
-  }
-
-  .md\:top-\[calc\(2\.5rem\+10px\)\] {
-    top: calc(2.5rem + 10px);
-  }
-
-  .md\:top-\[calc\(3\.5rem\+10px\)\] {
-    top: calc(3.5rem + 10px);
-  }
-
   .md\:top-\[calc\(3\.5rem\)\] {
     top: calc(3.5rem);
-  }
-
-  .md\:top-\[calc\(3\.5rem\+1px\)\] {
-    top: calc(3.5rem + 1px);
-  }
-
-  .md\:top-\[calc\(5rem\)\] {
-    top: calc(5rem);
-  }
-
-  .md\:top-\[calc\(7rem\)\] {
-    top: calc(7rem);
-  }
-
-  .md\:top-\[calc\(6rem\)\] {
-    top: calc(6rem);
   }
 
   .md\:top-\[calc\(6rem\+1px\)\] {
@@ -1945,44 +1917,16 @@ thead > tr, tr:not(:last-child) {
     left: 0px;
   }
 
-  .lg\:left-1\/3 {
-    left: 33.333333%;
-  }
-
-  .lg\:top-\[calc\(2\.5rem\+10px\)\] {
-    top: calc(2.5rem + 10px);
-  }
-
-  .lg\:top-\[calc\(3\.5rem\)\] {
-    top: calc(3.5rem);
-  }
-
-  .lg\:top-\[calc\(7rem\)\] {
-    top: calc(7rem);
-  }
-
-  .lg\:top-0 {
-    top: 0px;
-  }
-
-  .lg\:top-\[calc\(2\.5rem\)\] {
-    top: calc(2.5rem);
-  }
-
-  .lg\:top-\[calc\(2\.5rem\+1\)\] {
-    top: calc(2.5rem + 1);
+  .lg\:top-\[calc\(0px\)\] {
+    top: calc(0px);
   }
 
   .lg\:top-\[calc\(2\.5rem\+1px\)\] {
     top: calc(2.5rem + 1px);
   }
 
-  .lg\:top-\[calc\(-1px\)\] {
-    top: calc(-1px);
-  }
-
-  .lg\:top-\[calc\(0px\)\] {
-    top: calc(0px);
+  .lg\:left-1\/3 {
+    left: 33.333333%;
   }
 
   .lg\:col-span-2 {

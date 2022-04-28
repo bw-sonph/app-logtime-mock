@@ -92,7 +92,7 @@ function createOverLay() {
   $('body').append(
     jQuery('<div>').attr(
       'class',
-      'overlay fixed hidden inset-0 bg-gray-800 bg-opacity-60 h-full w-full transition-all duration-500 opacity-0',
+      'overlay fixed hidden inset-0 bg-gray-800 bg-opacity-60 h-full w-full transition-all duration-500 opacity-0 z-40',
     ),
   );
 }

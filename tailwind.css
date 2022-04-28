@@ -171,6 +171,7 @@
   @apply bg-[#E4E7EB];
 }
 
+/* SCHEDULES */
 .theadEl, #tbodyEl {
   @apply border-t border-l
 }
@@ -192,10 +193,6 @@
   @apply bg-[right_0.2rem_center] bg-[length:1em_1em] py-[0.2rem] pr-[15px] pl-[4px] max-w-[55px] text-center text-[0.85rem]
 }
 
-.sticky:first-child {
-  @apply bg-orange-200
-}
-
 .sticky .theadEl div {
   @apply h-10
 }
@@ -205,17 +202,37 @@
   @apply font-bold text-[0.85rem]
 }
 
-.sticky:nth-child(2) {
-  @apply bg-sky-200
-}
-
 .sticky:nth-child(2) div:not(:first-child) {
   @apply font-bold text-red-500;
 }
 
-#tbodyEl div.relative .css-i1mjhi:nth-child(even) {
+#tbodyEl div.relative .grid:nth-child(even)
+, #tbodyEl .grid:nth-child(even) div:first-child {
   @apply bg-green-100
 }
-#tbodyEl div.css-i1mjhi div:first-child {
+
+#tbodyEl .grid:nth-child(odd) div:first-child {
+  @apply bg-white
+}
+
+#tbodyEl div.grid div:first-child {
   @apply text-[0.85rem]
+}
+
+.sticky:first-child
+, .sticky:first-child .theadEl div:first-child {
+  @apply bg-orange-200
+}
+
+.sticky:nth-child(2)
+, .sticky:nth-child(2) .theadEl div:first-child {
+  @apply bg-sky-200
+}
+
+.sticky:first-child .theadEl div:first-child
+, .sticky:nth-child(2) .theadEl div:first-child
+, #tbodyEl .grid div:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
 }
