@@ -132,13 +132,6 @@
   }
 }
 
-[name='username']:focus + span,
-[name='pass']:focus + span,
-[name='sinPass']:focus + span,
-[name='reSinPass']:focus + span {
-  width: calc(100% + 20px);
-}
-
 .css-i1mjhi {
   grid-template-columns:
     minmax(70px, 1fr) minmax(70px, 1fr) minmax(70px, 1fr)
