@@ -881,6 +881,22 @@ thead > tr, tr:not(:last-child) {
   right: 0px;
 }
 
+.-left-60 {
+  left: -15rem;
+}
+
+.-left-48 {
+  left: -12rem;
+}
+
+.-left-24 {
+  left: -6rem;
+}
+
+.left-24 {
+  left: 6rem;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -1694,8 +1710,20 @@ thead > tr, tr:not(:last-child) {
   transition-duration: 150ms;
 }
 
+.delay-150 {
+  transition-delay: 150ms;
+}
+
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 @media (max-width: 576px) {

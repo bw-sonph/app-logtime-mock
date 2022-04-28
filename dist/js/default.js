@@ -18,6 +18,7 @@ $(document).ready(function () {
 
   $('body').on('click', '.close-popup-btn, .overlay', function () {
     closePopup($('.close-popup-btn:last'));
+    closeLeftMenu();
   });
 
   $('body').on('click', '.popup', function (e) {
@@ -63,17 +64,46 @@ $(document).ready(function () {
 
   // SP版のレフトメニュー
   $('body').on('click', '#MenuBtn', function () {
-    $('#overlayMenu').removeClass('hidden');
-    $('body').addClass('overflow-hidden');
-    $('#leftSideMenu').removeClass('-left-64').addClass('left-0');
-  });
+    var body = $('body');
+    var menu = $('#leftSideMenu');
 
-  $('body').on('click', '#overlayMenu', function () {
-    $('#overlayMenu').addClass('hidden');
-    $('#leftSideMenu').removeClass('left-0').addClass('-left-64');
-    $('body').removeClass('overflow-hidden');
+    createOverLay();
+
+    setTimeout(function () {
+      var overlay = $('.overlay:last');
+
+      body.addClass('overflow-hidden');
+      overlay.removeClass('hidden');
+
+      menu.removeClass('hidden');
+
+      setTimeout(function () {
+        overlay.removeClass('opacity-0');
+        menu.removeClass('-left-24').addClass('left-0');
+      }, 100);
+    });
   });
 });
+
+function closeLeftMenu() {
+  var body = $('body');
+  var menu = $('#leftSideMenu');
+  var overlay = $('.overlay:last');
+
+  menu.addClass('-left-24').removeClass('left-0');
+  setTimeout(function () {
+    body.removeClass('overflow-hidden');
+  }, 501);
+
+  setTimeout(function () {
+    overlay.addClass('opacity-0');
+  }, 100);
+
+  setTimeout(function () {
+    overlay.addClass('hidden');
+    overlay.remove();
+  }, 601);
+}
 
 var theadEl = document.getElementsByClassName('theadEl');
 var tbodyEl = document.getElementById('tbodyEl');
