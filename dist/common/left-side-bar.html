@@ -61,16 +61,18 @@
 <div class="bg-black bg-opacity-[0.12] absolute right-0 top-0 h-full w-[1px]"></div>
 
 <script>
+  var listMenu = {
+    'users.html': './users.html',
+    'user-add.html': './users.html',
+    'user-edit.html': './users.html',
+    'schedule.html': './schedule.html'
+  };
+
   $(document).ready(function () {
-    $('.menulist a').each(function () {
-      var href = $(this).attr('href').replace('./', '');
-      var iconActive = $(this).find('img').attr('data-icon-active');
-      var current = window.location.pathname.split('/').pop();
-    
-      if (href == current) {
-        $(this).addClass('active');
-        $(this).find('img').attr('src', iconActive);
-      }
-    });
+    var current = window.location.pathname.split('/').pop();
+    var target = $('.menulist a[href="'+ listMenu[current] +'"]');
+
+    target.addClass('active');
+    target.find('img').attr('src', target.find('img').attr('data-icon-active'));
   });
 </script>
