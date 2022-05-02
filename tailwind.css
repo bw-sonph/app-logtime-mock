@@ -156,9 +156,15 @@
   @apply absolute top-1/2 right-2 -translate-y-1/2;
 }
 
-.active {
-  @apply bg-[#57b846] mx-2 rounded-2xl;
+/* MENU START */
+.menulist a {
+  @apply text-[#757575];
 }
+
+.menulist a.active {
+  @apply bg-[#57b846] mx-2 rounded-2xl text-white;
+}
+/* MENU END */
 
 .bg-screen {
   @apply bg-[#E4E7EB];
